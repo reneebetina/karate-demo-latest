@@ -41,3 +41,13 @@ and a few example tests.
 7. After clicking create, it will also start an initial build which should give you a build success.
 8. Create a test runner and define if you want to run in parallel
 9. Create a test (feature file)
+
+
+### POM dependencies added
+commons-io : for common file operations
+commons-codec : for encoders/decoders
+cucumber-reporting : for cucumber reports to be generated
+apache-poi : for reading MS formats (Word/Excel etc)
+apache-poi-ooxml : to read latest formats such as .xlsx ; note that poi and poi-ooxml must be declared together
+apache pdfbox and pdfbox tools : PDF operations
+software.amazon.awssdk s3 : for S3 operations
