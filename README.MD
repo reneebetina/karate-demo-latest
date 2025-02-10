@@ -22,6 +22,7 @@ You may use this as a base for your upcoming project.
 
 6. On IntelliJ Terminal/Console
     * Run command: `mvn clean`
+    * Run command: `mvn install`
 
     * Then run command: `mvn test -Dtest=ExamplesTest`
     * To run a specific tag: `mvn test -Dtest=TestRunner "-Dkarate.options=--tags @demo"`
