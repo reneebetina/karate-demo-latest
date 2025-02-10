@@ -35,9 +35,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>net.nasterthought</groupId>
+            <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
-            <version>5.7.5</version>
+            <version>5.8.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>

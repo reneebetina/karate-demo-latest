@@ -10,8 +10,13 @@ You may use this as a base for your upcoming project.
 
 ### Installation and Running on your Local
 1. Install Java 17 (or Open JDK 17)
+   * Windows - Environment Variables: PATH and JAVA_HOME must point to Java 17 bin folder
+   * MacOS - go to ~/.zshenv   -> export JAVA_HOME=$(/usr/libexec/java_home -v 17)
 2. Install Apache Maven
+   * Windows - download then update Environment Variables: PATH must point to the correct Maven bin folder
+   * MacOS - `brew install maven`
 3. Install IntelliJ IDE Community Edition
+   * Plugins to Install: Gherkin, Cucumber for Java, Karate
 4. Clone this repository
 5. Open IntelliJ IDE and open this project
 
@@ -19,6 +24,7 @@ You may use this as a base for your upcoming project.
     * Run command: `mvn clean`
 
     * Then run command: `mvn test -Dtest=ExamplesTest`
+    * To run a specific tag: `mvn test -Dtest=TestRunner "-Dkarate.options=--tags @demo"`
 
    Expect:
     * ``BUILD SUCCESS``
@@ -26,8 +32,7 @@ You may use this as a base for your upcoming project.
         * Summary is seen under ```/target/karate-reports/karate-summary.html```
 
 
-
-
+   
 ### If you wish to start a new Karate project from scratch
 1. On IntelliJ -> File -> New -> Project
 2. Select Maven Archetype and make sure you put JDK = Java 17

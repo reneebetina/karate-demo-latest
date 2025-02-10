@@ -56,7 +56,7 @@ function fn() {
   else if (ENV1 == 'test') {
     config.bucketName = 'sample-bucket-test';
     // customize
-    config.tokenUrl= 'https://'+ENV1+'someTokenEndpoint.mycompany.com';
+    config.tokenUrl= 'https://'+ENV1+'.someTokenEndpoint.mycompany.com';
     config.clientIdValue = 'someValue';
     config.clientSecretValue= 'someValue';
     config.scopeValue = 'someValue';
@@ -67,9 +67,10 @@ function fn() {
   }
 
   //Generate a token (that can be reused by all feature files
-  var tokenGen = karate.callSingle('classpath:features/authentication/TKN.feature', config)
-  config.access_token = tokenGen.generated_access_token
-  config.auth = "Bearer " + config.access_token
+  //NOTE: This is commented out as we don't have an actual auth endpoint for demo
+  //var tokenGen = karate.callSingle('classpath:features/authentication/TKN.feature', config)
+  //config.access_token = tokenGen.generated_access_token
+  //config.auth = "Bearer " + config.access_token
 
 
   // load all environment data
@@ -83,10 +84,9 @@ function fn() {
   config.myDynamicId = dynamicIdFromJenkins
 
 
-  // Karate configurations
-  // don't waste time waiting for a connection or if servers don't respond within 10 seconds
-  karate.configure('connectionTimeout',10000);
-  karate.configure('readTimeout',10000);
+ // don't waste time waiting for a connection or if servers don't respond within 5 seconds
+  karate.configure('connectTimeout', 5000);
+  karate.configure('readTimeout', 5000);
 
   return config;
 }
