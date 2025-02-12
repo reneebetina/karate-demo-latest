@@ -24,13 +24,16 @@ You may use this as a base for your upcoming project.
     * Run command: `mvn clean`
     * Run command: `mvn install`
 
-    * Then run command: `mvn test -Dtest=ExamplesTest`
-    * To run a specific tag: `mvn test -Dtest=TestRunner "-Dkarate.options=--tags @demo"`
+    * Then run command to execute demo tests:
+      *  For default demo from Karate Labs: `mvn clean test -Dtest=ExamplesTest`
+      *  For my demo using reqres.in endpoints: `mvn clean test -Dtest=TestRunner`
+      *  Syntax tp run a specific tag: `mvn test -D test=TestRunner "-D karate.options=--tags @demo"`
+      * Syntax for other command line variables: `mvn test -D test=TestRunner -D karate.ENV1=test01 -D karate.ENV2=someValue "-D karate.options=--tags @demo"`
 
-   Expect:
-    * ``BUILD SUCCESS``
-    * a `target` directory to appear containing output of your run
-        * Summary is seen under ```/target/karate-reports/karate-summary.html```
+  Expect:
+   * ``BUILD SUCCESS``
+   * a `target` directory to appear containing output of your run
+       * Summary is seen under ```/target/karate-reports/karate-summary.html```
 
 
    

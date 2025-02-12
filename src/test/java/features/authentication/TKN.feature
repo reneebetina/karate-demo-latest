@@ -3,7 +3,12 @@ Feature: This feature is only created to generate an access_token to be used in 
   # no runner as this will be called by karate-config.js
   # karate-config runs before executing all scenarios
 
-  @setupCheck
+  @demoToken
+  Scenario: TKN
+    * def generated_access_token = 'renee-demo-token-' + java.util.UUID.randomUUID();
+    * print generated_access_token
+
+  @actualToken
   Scenario: TKN
     Given url tokenUrl
     * configure ssl = true

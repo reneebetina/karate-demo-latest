@@ -8,11 +8,11 @@ function fn() {
   ENV1 = ENV1; //this line is used to 'save' the value. deleting this line will cause an error
   karate.log ('karate.ENV1 system property was: ', ENV1 );
 
-  var ENV2 = karate.properties['karate.ENV1'];
+  var ENV2 = karate.properties['karate.ENV2'];
   ENV2 = ENV2;
   karate.log ('karate.ENV1 system property was: ', ENV2 );
 
-  var ENV3 = karate.properties['karate.ENV1'];
+  var ENV3 = karate.properties['karate.ENV3'];
   ENV3 = ENV3;
   karate.log ('karate.ENV1 system property was: ', ENV3 );
 
@@ -41,7 +41,7 @@ function fn() {
     ENV1: ENV1,
     ENV2: ENV2,
     ENV3: ENV3,
-    base_demoUrl: '',
+    baseUrl: 'https://reqres.in/',
     base_demoUrl_ENV1: 'https://'+ENV1+'someEndpoint.mycompany.com',
     base_demoUrl_ENV2: 'https://'+ENV2+'someEndpoint.mycompany.com',
     base_demoUrl_ENV3: 'https://'+ENV3+'someEndpoint.mycompany.com',
@@ -68,9 +68,9 @@ function fn() {
 
   //Generate a token (that can be reused by all feature files
   //NOTE: This is commented out as we don't have an actual auth endpoint for demo
-  //var tokenGen = karate.callSingle('classpath:features/authentication/TKN.feature', config)
-  //config.access_token = tokenGen.generated_access_token
-  //config.auth = "Bearer " + config.access_token
+  var tokenGen = karate.callSingle('classpath:features/authentication/TKN.feature@demoToken', config)
+  config.access_token = tokenGen.generated_access_token
+  config.auth = "Bearer " + config.access_token
 
 
   // load all environment data
