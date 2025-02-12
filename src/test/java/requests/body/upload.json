@@ -1,0 +1,13 @@
+{
+  "document": {
+    "metadata": {
+      "firstName": "#(fName)",
+      "middleName": "#(mName)",
+      "lastName": "#(lName)"
+    },
+    "file": {
+      "extension": "pdf",
+      "mimeType": "application/pdf"
+    }
+  }
+}

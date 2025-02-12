@@ -84,13 +84,19 @@ Feature:
 
       * def my_utils = Java.type('common.utils')
       * def convertedFile = my_utils.fileToBase64(filePath);
+      ## insert it to the json file
+      * set body.document.file.data = convertedFile
+
       * def extractedFileName = my_utils.getFileName(filePath);
+      ## Below is an example of setting/inserting a JSON value, only if condition is met
+      #* if (_____ == 'something') karate.set('body', '$.document.metadata.fileName', extractedFileName)
 
       And request body
       * print body
 
-      When method post
-      * print response
+      ## Intentionally turning off as we don't have a url that will respond
+      # When method post
+      # * print response
 
 
     @UploadMultipart
@@ -115,7 +121,6 @@ Feature:
   Scenario: [GET] Download identifier and id
     #* def identifier = 'set on feature level'
     #* def idValue = 'set on feature level'
-
     * def pathVariable = '________/' + identifier + '/' + idValue
 
     Given path pathVariable
