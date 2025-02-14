@@ -7,6 +7,7 @@ Author: @reneebetina
 This is a high level demo of how to use Karate Automation for projects with multiple tenants (multi-tenancy).
 You may use this as a base for your upcoming project.
 
+In this repo, I have used Karate v1.5.1 (Released Jan 7, 2025) https://github.com/karatelabs/karate/releases/tag/v1.5.1
 
 ### Installation and Running on your Local
 1. Install Java 17 (or Open JDK 17)
@@ -29,6 +30,7 @@ You may use this as a base for your upcoming project.
       *  For my demo using reqres.in endpoints: `mvn clean test -Dtest=TestRunner`
       *  Syntax tp run a specific tag: `mvn test -D test=TestRunner "-D karate.options=--tags @demo"`
       * Syntax for other command line variables: `mvn test -D test=TestRunner -D karate.ENV1=test01 -D karate.ENV2=someValue "-D karate.options=--tags @demo"`
+
 
   Expect:
    * ``BUILD SUCCESS``
@@ -60,3 +62,10 @@ apache-poi : for reading MS formats (Word/Excel etc)
 apache-poi-ooxml : to read latest formats such as .xlsx ; note that poi and poi-ooxml must be declared together
 apache pdfbox and pdfbox tools : PDF operations
 software.amazon.awssdk s3 : for S3 operations
+
+
+### Available tags for demo
+@basic --- default demo to check if repo is working
+@demo --- renee demo test using API that is responding (reqres.in)
+@outlineDemo --- demo scenario Outline
+@xmlDemo --- demo for XML testing, expect 1 failure that is intended

@@ -53,7 +53,7 @@ Feature: Sample Feature File Structure
     * def expected_overseasFlag = UploadAction.response.overseasFlag
     * if (extractedValue_country != 'AUSTRALIA' || extractedValue_country != 'AUS' || extractedValue_country != 'AU'){ karate.match(expected_overseasFlag,'Y')}
 
-  @focus
+  @outlineDemo
   Scenario Outline: Call an Endpoint multiple times <ScenarioNo> - <ValidationType>
   # scenario level variables - cannot be shared to other scenarios
     * def s_value = '<ValidationType>'
