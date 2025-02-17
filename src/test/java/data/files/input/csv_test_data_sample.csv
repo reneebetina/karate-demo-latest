@@ -1,0 +1,9 @@
+TestCaseID,RequestTemplateID,ValidationType,firstName,middleName,lastName,phoneNumber,email
+csv_TC1,TemplateA,Positive,CsvSam1,G,Paul,+61123456789,
+csv_TC2,TemplateA,Missing Optional,CsvSam2,,Paul,+61123456789,abc@gmail.com
+csv_TC3,TemplateA,Missing Mandatory,CsvSam3,G,,+61123456789,abc@gmail.com
+csv_TC4,TemplateA,Authorization Violation,csv_VIO4,LA,TION,+61123456789,abc@gmail.com
+csv_TC5,TemplateB,Positive,CsvSam5,G,Paul,+61123456789,abc@gmail.com
+csv_TC6,TemplateB,Missing Optional,CsvSam6,,Paul,+61123456789,abc@gmail.com
+csv_TC7,TemplateB,Missing Mandatory,CsvSam7,G,,+61123456789,abc@gmail.com
+csv_TC8,TemplateB,Authorization Violation,csv_VIO8,LA,TION,+61123456789,abc@gmail.com
