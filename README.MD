@@ -66,6 +66,10 @@ software.amazon.awssdk s3 : for S3 operations
 
 ### Available tags for demo
 @basic --- default demo to check if repo is working
+`mvn test -D test=ExamplesTest "-D karate.options=--tags @basic"`
+
+All other tags use the "TestRunner"
+`mvn test -D test=TestRunner "-D karate.options=--tags @demo"`
 @demo --- renee demo test using API that is responding (reqres.in)
 @outlineDemo --- demo scenario Outline
 @xmlDemo --- demo for XML testing, expect 1 failure that is intended
