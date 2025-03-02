@@ -1,0 +1,4 @@
+{
+  "username": "#(dyn_username)",
+  "password": "#(dyn_password)"
+}

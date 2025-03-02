@@ -45,6 +45,7 @@ function fn() {
     base_demoUrl_ENV1: 'https://'+ENV1+'someEndpoint.mycompany.com',
     base_demoUrl_ENV2: 'https://'+ENV2+'someEndpoint.mycompany.com',
     base_demoUrl_ENV3: 'https://'+ENV3+'someEndpoint.mycompany.com',
+    baseLocalhostUrl: 'http://localhost:8080',
     base_auth: 'Basic _______________',
     access_token: 'Dynamic Token that will have a value on run time',
     env_data: ''

@@ -169,3 +169,18 @@ Feature:
 
     When method post
     * print response
+
+  @userLogin_localhost
+  Scenario: [POST] call user login
+    Given url baseLocalhostUrl
+    And path '/login'
+
+    * def body = read('file:'+ dir + body_login);
+    # you may also override the request on feature level
+
+    And request body
+    * print body
+
+    When method post
+    * print response
+    And assert responseTime < 1000

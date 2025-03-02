@@ -73,3 +73,4 @@ All other tags use the "TestRunner"
 @demo --- renee demo test using API that is responding (reqres.in)
 @outlineDemo --- demo scenario Outline
 @xmlDemo --- demo for XML testing, expect 1 failure that is intended
+@demo_with_wiremock   --- demo for wiremock, make sure that your wiremock is up first 
