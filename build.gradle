@@ -1,0 +1,49 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.example'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '17'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation "io.karatelabs:karate-junit5:1.5.1"
+    implementation "commons-io:commons-io:2.7"
+    testImplementation "commons-codec:commons-codec:1.14"
+    testImplementation "net.masterthought:cucumber-reporting:5.8.2"
+    implementation "org.apache.poi:poi-ooxml:4.0.1"
+    implementation "org.apache.poi:poi-ooxml-schemas:4.0.1"
+    implementation "org.apache.pdfbox:pdfbox:2.0.17"
+    implementation "org.apache.pdfbox:pdfbox-tools:2.0.17"
+    implementation "software.amazon.awssdk:s3:2.20.1"
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+
+test {
+    useJUnitPlatform()
+    // When running the test task, only run the base Test class which runs all cucumber
+    // tests in parallel.
+    include '**/*TestRunner*'
+    systemProperty "file.encoding", "UTF-8"
+    systemProperty "karate.options", System.properties.getProperty("karate.options")
+    systemProperty "karate.env", System.properties.getProperty("karate.env")
+    outputs.upToDateWhen { false }
+    testLogging.showStandardStreams = true
+}
+
+sourceSets {
+    test {
+        resources {
+            srcDir file('src/test/java')
+            exclude '**/*.java'
+        }
+    }
+} 
