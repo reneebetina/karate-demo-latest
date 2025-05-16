@@ -32,6 +32,7 @@ test {
     // When running the test task, only run the base Test class which runs all cucumber
     // tests in parallel.
     include '**/*TestRunner*'
+    include '**/*ExamplesTest*'
     systemProperty "file.encoding", "UTF-8"
     systemProperty "karate.options", System.properties.getProperty("karate.options")
     systemProperty "karate.env", System.properties.getProperty("karate.env")
