@@ -1,5 +1,6 @@
 {
   Content-Type: 'application/json',
   X-CorrelationID: '#(correlationID)',
-  Authorization: '#(auth)'
+  Authorization: '#(auth)',
+  x-api-key: 'reqres-free-v1'
 }
